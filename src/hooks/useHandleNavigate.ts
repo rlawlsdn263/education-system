@@ -1,20 +1,19 @@
-Cookies
+import { useSetRecoilState } from 'recoil'
 import { useNavigate } from 'react-router-dom'
 import { useKeycloak } from '@react-keycloak/web'
-import { useSetRecoilState } from 'recoil'
-import { currentModalAtom, loadingAtom } from '@/atoms'
-import Cookies from 'js-cookie'
+import { loadingAtom } from '@/atoms'
+import { useCloseModal } from '@/hooks/_index'
 
 const useHandleNavigate = () => {
   const setLoading = useSetRecoilState(loadingAtom)
-  const setCurrentModal = useSetRecoilState(currentModalAtom)
+  const closeModal = useCloseModal()
 
   const navigate = useNavigate()
   const { keycloak } = useKeycloak()
   
   const checkAuthNavigation = async (id: number) => {
     setLoading(true)
-    setCurrentModal("")
+    closeModal()
     
     //키클락 인증이 안 된 경우(로그아웃 상태)
     if (!keycloak.authenticated) {

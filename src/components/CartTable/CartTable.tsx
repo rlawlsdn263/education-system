@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import styles from './CartTable.module.css'
+import { getUserAuthCookie } from '@/utils'
+import { cartTableAtom, alertAtom } from '@/atoms'
 import axiosInstance from '@/services/axiosInstance'
 import useHandleNavigate from '@/hooks/useHandleNavigate'
 import { ReactComponent as Warning } from '@/assets/warning.svg'
-import { cartTableAtom, alertAtom } from '@/atoms'
-import { getUserAuthCookie } from '@/utils'
 
 const CartTable = () => {
   const setAlert = useSetRecoilState(alertAtom)

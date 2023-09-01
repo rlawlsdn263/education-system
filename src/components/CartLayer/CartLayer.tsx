@@ -1,23 +1,24 @@
 import { useState, useEffect } from 'react'
+import { useSetRecoilState } from 'recoil'
 import styles from './CartLayer.module.css'
 import { alertAtom } from '@/atoms'
-import { useSetRecoilState } from 'recoil'
-import axiosInstance from '@/services/axiosInstance'
 import { getUserAuthCookie } from '@/utils'
+import axiosInstance from '@/services/axiosInstance'
 
-interface CartLayerProps {
+interface CartLayerInterface {
   className?: string
 }
 
-interface CartLayerDataProps {
+interface CartLayerDataInterface {
   id: number
   title: string
 }
 
-const CartLayer = ({ className }: CartLayerProps) => {
+const CartLayer = ({ className }: CartLayerInterface) => {
   //blocks는 최대 크기가 28인 비어있는 배열이다
   const [blocks, setBlocks] = useState(new Array(28).fill(null))
   const setAlert = useSetRecoilState(alertAtom)
+  
   const userAuth = getUserAuthCookie()
 
   useEffect(() => {
@@ -42,7 +43,7 @@ const CartLayer = ({ className }: CartLayerProps) => {
     <div className={`${className} ${styles.Layer}`}>
       <h3 className={styles.title}>개인 AI</h3>
       <div className={styles['block-container']}>
-        {blocks?.map((block: CartLayerDataProps, index) => {
+        {blocks?.map((block: CartLayerDataInterface, index) => {
           return (
             // block에 데이터가 있으면 렌더링이 된다.
             <div

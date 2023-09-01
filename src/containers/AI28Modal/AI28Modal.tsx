@@ -12,7 +12,6 @@ const AI28Modal = () => {
   // 스크롤 숨기기
   useHideScroll()
 
-
   return (
     <div
       className={styles.shadow}

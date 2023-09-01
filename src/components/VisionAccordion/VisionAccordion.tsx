@@ -4,7 +4,7 @@ import useHandleNavigate from '@/hooks/useHandleNavigate'
 import { ReactComponent as ArrowUp } from '@/assets/arrow-up.svg'
 import { ReactComponent as ArrowDown } from '@/assets/arrow-down.svg'
 
-interface VisionAccordionProps {
+interface VisionAccordionInterface {
   title: string
   section: {
     id: number
@@ -21,7 +21,7 @@ const VisionAccordion = ({
   isActiveSection,
   setActiveIndex,
   sectionIndex,
-}: VisionAccordionProps) => {
+}: VisionAccordionInterface) => {
 
   const checkAuthNavigation = useHandleNavigate();
 

@@ -1,5 +1,3 @@
-/* @import '../../root.css'; */
-
 .layers {
   display: flex;
   width: 720px;
@@ -9,25 +7,27 @@
   position: relative;
 }
 
-.container-general {
-  z-index: 4;
+/* 전국민 AI 레이어 */
+.container-ai28 {
+  z-index: 3;
   transition: all 0.3s ease-in-out;
 }
 
-.container-general:hover {
+.container-ai28:hover {
   transform: translateY(-15%);
 }
 
-.general {
+.ai28 {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 4;
+  z-index: 3;
   cursor: pointer;
 }
 
+/* AI훈민정음-VISION 레이어 */
 .container-vision {
-  z-index: 3;
+  z-index: 2;
   transition: all 0.3s ease-in-out;
 }
 
@@ -39,27 +39,11 @@
   position: absolute;
   top: 0;
   left: 210px;
-  z-index: 3;
-  cursor: pointer;
-}
-
-.container-army {
-  z-index: 2;
-  transition: all 0.3s ease-in-out;
-}
-
-.container-army:hover {
-  transform: translateY(-15%);
-}
-
-.army {
-  position: absolute;
-  top: 0;
-  left: 280px;
   z-index: 2;
   cursor: pointer;
 }
 
+/* 개인 AI 레이어 */
 .container-cart {
   z-index: 1;
   transition: all 0.3s ease-in-out;

@@ -6,17 +6,16 @@ import { bookAtom } from '@/atoms'
 import { ReactComponent as BookmarkFill } from '@/assets/bookmark-fill.svg'
 import { ReactComponent as BookmarkEmpty } from '@/assets/bookmark-empty.svg'
 
-
 const Book = ({ className }: { className: string }) => {
   const book = useRecoilValue(bookAtom)
-
-  const { addBook, deleteBook, checkBook } = useBook()
+  
   const isKeycloakAuthenticated = useKeycloakAuthenticated()
-
+  const { addBook, deleteBook, checkBook } = useBook()
+  
+  // 빠른 이동을 했을 경우에도 checkBook을 실행하기 위해 cartId 추적
   const cartId = localStorage.getItem("cartId")
   
-  // 쿠키가 생성될 때 isLoggedIn이 true가 되어 checkBook이 즉시 실행된다. 
-  // 그 뒤로는 userAuth 쿠기와 cardId 값을 추적하여 다시 실행한다
+  // 로그인이 된 상태면 개인 AI 데이터를 확인한다
   useEffect(() => {
     if(isKeycloakAuthenticated) {
       checkBook()

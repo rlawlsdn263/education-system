@@ -1,7 +1,7 @@
 import { useSetRecoilState } from 'recoil'
 import styles from './Layers.module.css'
-import { AI28Layer, VisionLayer, CartLayer } from '@/components'
 import { currentModalAtom } from '@/atoms'
+import { AI28Layer, VisionLayer, CartLayer } from '@/components'
 
 const Layers = () => {
 
@@ -15,10 +15,10 @@ const Layers = () => {
   return (
     <div className={styles.layers}>
       <div
-        className={styles['container-general']}
+        className={styles['container-ai28']}
         onClick={() => openModal("ai28")}
       >
-        <AI28Layer className={styles.general} />
+        <AI28Layer className={styles.ai28} />
       </div>
       <div
         className={styles['container-vision']}

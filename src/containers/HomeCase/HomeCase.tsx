@@ -1,8 +1,8 @@
 import { useRecoilValue } from 'recoil'
 import styles from './HomeCase.module.css'
-import { Title, Text, Layers, AlertModal, Spinner } from '@/components'
-import { loadingAtom, alertAtom } from '@/atoms'
 import { ModalController } from '@/containers'
+import { loadingAtom, alertAtom } from '@/atoms'
+import { Title, Text, Layers, AlertModal, Spinner } from '@/components'
 
 const HomeCase = () => {
   const loading = useRecoilValue(loadingAtom)

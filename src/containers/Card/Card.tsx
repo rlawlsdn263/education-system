@@ -1,7 +1,7 @@
 import styles from './Card.module.css'
 import { Text, Badge } from '@/components'
 
-interface CardProps {
+interface CardInterface {
   badge: string
   jockey: string
   title: string
@@ -17,7 +17,7 @@ const Card = ({
   content,
   cardColor,
   onClickCard,
-}: CardProps) => {
+}: CardInterface) => {
   const cardStyle = {
     backgroundColor: cardColor,
   }
